@@ -52,7 +52,7 @@
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
+        android:id="@+id/VelocidadRating"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/AtrasButton"
         android:layout_alignStart="@+id/AtrasButton"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:text="Velocidad"
         android:id="@+id/textView"
-        android:layout_above="@+id/ratingBar"
+        android:layout_above="@+id/VelocidadRating"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/AdelanteButton"

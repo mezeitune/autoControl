@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AutoControl</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_title">Bienvenido a Semaforos Accesibles.</string>
+    <string name="main_description">A partir de ahora la aplicación se encuentra ejecutandose
+        de forma automática, por lo que cuando se aproxime a un semáforo accesible usted recibirá
+        asistencia para cruzar la calle.</string>
+    <string name="main_thanks">Muchas gracias por utilizar el sistema de semáforos accesibles.</string>
+    <string name="main_btn_salir">Ocultar aplicación</string>
+
+    <string name="notify_running">Ejecución activa.</string>
+
+    <!-- Toast -->
+    <string name="toast_enable_wifi">Enciendendo WIFI</string>
 </resources>
