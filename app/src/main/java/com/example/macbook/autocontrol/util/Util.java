@@ -22,9 +22,9 @@ public class Util {
 	public static final String ACC_PRUEBA = "P";
 	public static final String WIFI_LOCK = "com.adox.semacc";
 	
-	public static final String WIFI_IDENTIFIER = "InfoSign";
+	public static final String WIFI_IDENTIFIER = "camara";
 	public static final String WIFI_PASS = "adox2311";
-	public static String posturl = "http://192.168.1.127:6500/";
+	public static String posturl = "http://192.168.1.200:3488/";
 
 	public static String semIp = "192.168.1.200";
 	//public static String semIp = "192.168.1.101";

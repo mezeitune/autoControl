@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         android:text="Derecha"
         android:id="@+id/DerechaButton"
-        android:layout_alignTop="@+id/IzquierdaButton"
-        android:layout_toRightOf="@+id/IzquierdaButton"
-        android:layout_toEndOf="@+id/IzquierdaButton" />
+        android:layout_above="@+id/AtrasButton"
+        android:layout_alignRight="@+id/VelocidadRating"
+        android:layout_alignEnd="@+id/VelocidadRating" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -35,9 +35,9 @@
         android:layout_height="wrap_content"
         android:text="Adelante"
         android:id="@+id/AdelanteButton"
-        android:layout_above="@+id/DerechaButton"
-        android:layout_alignLeft="@+id/AtrasButton"
-        android:layout_alignStart="@+id/AtrasButton" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -46,8 +46,8 @@
         android:text="Atras"
         android:id="@+id/AtrasButton"
         android:layout_below="@+id/IzquierdaButton"
-        android:layout_toLeftOf="@+id/DerechaButton"
-        android:layout_toStartOf="@+id/DerechaButton" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -68,4 +68,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/AdelanteButton"
         android:layout_alignEnd="@+id/AdelanteButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRENAR"
+        android:id="@+id/FrenarButton"
+        android:layout_alignTop="@+id/DerechaButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

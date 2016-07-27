@@ -63,7 +63,7 @@ public class UdpClient {
                         socket = connectSocket(serverAddr, port);
                         if (socket != null /* && socket.isConnected() */) {
                             handler.onConected(true);
-
+                            Log.i("-------------------","SE CONECTO");
                             while (socket != null /* && socket.isConnected() */) {
                                 String data = read();
                                 if (data != null) {
@@ -71,7 +71,9 @@ public class UdpClient {
                                 }
                             }
                         } else {
+                            Log.i("-------------------","NO SE CONECTO");
                             handler.onConected(false);
+
                         }
                     } catch (UnknownHostException e) {
                         e.printStackTrace();

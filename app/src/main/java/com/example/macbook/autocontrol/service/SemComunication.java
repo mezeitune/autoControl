@@ -248,12 +248,13 @@ public class SemComunication extends BroadcastReceiver implements Runnable, UdpD
 
             Log.i("#FSEM# SERVICE", "CONECTADO");
             SemComunication.staticState = StaticState.CONECTADO;
-
+            Log.i("#FSEM# SERVICE", "CAMBIE VALOR");
             SemComunication.currentComunications.put(SSID, this);
+            Log.i("#FSEM# SERVICE", "CURRENTCO");
 
             // Instancio el sintetizador de voz.
-            this.textToSpeech = new TextToSpeech(context, this);
-            this.textToSpeech.setSpeechRate(2);
+            //this.textToSpeech = new TextToSpeech(context, this);
+            //this.textToSpeech.setSpeechRate(2);
         } else {
             Log.i("#FSEM# SERVICE", "NO CONECTADO");
             // Si no me pude conectar, actualizo el estado.
@@ -302,18 +303,71 @@ public class SemComunication extends BroadcastReceiver implements Runnable, UdpD
     /**
      * Una vez encontrado y conectado el semáforo, se solicita la informacion completa
      */
-    public static  void requestFull() {
+    public void requestFull() {
 
         Log.i("#FSEM# SERVICE", "REQUEST FULL");
 
-        client.send("<COMPLETO>");
+        client.send("<CTD150>");
+    }
+    public static  void requestAtras() {
+
+        Log.i("#FSEM# SERVICE", "REQUEST ATRAS");
+
+        client.send("<ATRAS>");
+    }
+
+    public static  void requestFrenar() {
+
+        Log.i("#FSEM# SERVICE", "REQUEST FRENAR");
+
+        client.send("<CTD500>");
+    }
+    public static  void requestAdelante() {
+
+        Log.i("#FSEM# SERVICE", "REQUEST ADELANTE");
+
+        client.send("<ADELANTE>");
+    }
+
+    public static  void requestDerecha() {
+
+        Log.i("#FSEM# SERVICE", "REQUEST DERECHA");
+
+        client.send("<DERECHA>");
+    }
+
+    public static  void requestIzquierda() {
+
+        Log.i("#FSEM# SERVICE", "REQUEST IZQUIERDA");
+
+        client.send("<IZQUIERDA>");
     }
 
     public static  void requestVelocidad(float rating) {
+        int rating2 = Math.round(rating);
+        String number="500";
+        switch(rating2){
+            case 1:
+                number = "150";
+                break;
+            case 2:
+                number = "100";
+                break;
+            case 3:
+                 number= "080";
+                break;
+            case 4:
+                number = "050";
+                break;
 
-        Log.i("#FSEM# SERVICE", String.valueOf(rating));
+            case 5:
+                number = "020";
+                break;
 
-        //client.send("<COMPLETO>");
+
+        }
+        Log.i("#FSEM# SERVICE", number);
+        client.send("<CTD" + number + ">");
     }
 
     /**
@@ -394,7 +448,7 @@ public class SemComunication extends BroadcastReceiver implements Runnable, UdpD
             }
 
             // Solicito para saber siempre el estado de las luces.
-            requestFull();
+            //requestFull();
 
             // Solo lo uso si no es igual al ultimo tiempo usado, para no repetir segundos.
             if (tiempo != tiempoDisponible && tiempo>0) {
